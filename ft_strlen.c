@@ -6,13 +6,15 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:27:20 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/09 22:27:31 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/11 18:18:20 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	if (! str)
 		return (0);

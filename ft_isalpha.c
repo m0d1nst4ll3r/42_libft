@@ -6,11 +6,11 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 23:06:32 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/09 23:08:42 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/11 18:03:15 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(unsigned char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);

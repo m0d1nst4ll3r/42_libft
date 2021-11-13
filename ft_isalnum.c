@@ -6,11 +6,11 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 23:06:32 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/09 23:10:13 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/11 18:02:58 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(unsigned char c)
+int	ft_isalnum(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
 		|| (c >= '0' && c <= '9'))

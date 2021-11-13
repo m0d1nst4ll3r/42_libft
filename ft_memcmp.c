@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 22:27:34 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/12 00:43:00 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/12 00:14:20 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/12 00:20:44 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t				i;
+	const unsigned char	*ar1;
+	const unsigned char	*ar2;
 
-	if (! dest || ! src)
-		return (dest);
+	if (! s1 || ! s2)
+		return (0);
 	i = 0;
-	while (i < n && src[i])
-	{
-		dest[i] = src[i];
+	ar1 = (const unsigned char *)s1;
+	ar2 = (const unsigned char *)s2;
+	while (i < n && ar1[i] && ar2[i] && ar1[i] == ar2[i])
 		i++;
-	}
-	while (i < n)
-		dest[i++] = 0;
-	return (dest);
+	return (ar1[i] - ar2[i]);
 }

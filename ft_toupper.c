@@ -6,11 +6,11 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 23:12:53 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/09 23:13:31 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/11 17:30:44 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(unsigned char c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);

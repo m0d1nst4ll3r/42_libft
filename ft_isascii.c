@@ -6,11 +6,11 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 23:06:32 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/09 23:11:18 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/11 18:03:22 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(unsigned char c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

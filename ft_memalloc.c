@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 22:27:34 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/12 00:43:00 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/12 01:01:22 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/12 01:04:43 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+void	*ft_memalloc(size_t size)
 {
 	size_t	i;
+	void	*new;
 
-	if (! dest || ! src)
-		return (dest);
+	new = malloc(size);
+	if (new == NULL)
+		return (new);
 	i = 0;
-	while (i < n && src[i])
+	while (i < size)
 	{
-		dest[i] = src[i];
+		((char *)new)[i] = 0;
 		i++;
 	}
-	while (i < n)
-		dest[i++] = 0;
-	return (dest);
+	return (new);
 }

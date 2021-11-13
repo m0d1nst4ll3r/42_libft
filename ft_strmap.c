@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 22:27:34 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/12 00:43:00 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/13 01:16:33 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/13 02:13:52 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+char	*ft_strmap(const char *s, char (*f)(char))
 {
 	size_t	i;
+	char	*new;
 
-	if (! dest || ! src)
-		return (dest);
+	if (! s || ! f)
+		return (NULL);
 	i = 0;
-	while (i < n && src[i])
+	while (s[i])
+		i++;
+	new = (char *)malloc((i + 1) * sizeof(*new));
+	if (new == NULL)
+		return (new);
+	i = 0;
+	while (s[i])
 	{
-		dest[i] = src[i];
+		new[i] = (*f)(s[i]);
 		i++;
 	}
-	while (i < n)
-		dest[i++] = 0;
-	return (dest);
+	new[i] = 0;
+	return (new);
 }

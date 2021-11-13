@@ -6,13 +6,13 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 23:12:53 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/09 23:13:53 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/11 18:08:11 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(unsigned char c)
+int	ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'A')
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
 	return (c);
 }

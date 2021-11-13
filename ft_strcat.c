@@ -6,14 +6,16 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:24:56 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/09 22:30:12 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/12 00:38:23 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+#include "libft.h"
+
+char	*ft_strcat(char *dest, const char *src)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	if (! dest || ! src)
 		return (dest);
@@ -22,7 +24,10 @@ char	*ft_strcat(char *dest, char *src)
 	while (dest[i])
 		i++;
 	while (src[j])
-		dest[i + j] = src[j++];
+	{
+		dest[i + j] = src[j];
+		j++;
+	}
 	dest[i + j] = 0;
 	return (dest);
 }

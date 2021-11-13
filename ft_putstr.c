@@ -6,11 +6,11 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:25:35 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/09 22:26:01 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/11 23:25:48 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr(char *str)
 {

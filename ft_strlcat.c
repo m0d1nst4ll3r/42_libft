@@ -6,15 +6,17 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:35:01 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/09 22:47:45 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/11 23:23:04 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcat(char *dest, char *src, unsigned int n)
+#include "libft.h"
+
+int	ft_strlcat(char *dest, const char *src, size_t n)
 {
-	int	dstlen;
-	int	srclen;
-	int	i;
+	size_t	dstlen;
+	size_t	srclen;
+	size_t	i;
 
 	if (! dest || ! src)
 		return (0);

@@ -6,12 +6,14 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 23:01:39 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/09 23:02:25 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/11 23:24:20 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
+	if (! s1 || ! s2)
+		return (0);
 	while (*s1 && *s2 && *s1 == *s2)
 	{
 		s1++;
