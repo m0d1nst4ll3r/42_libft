@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 01:13:04 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/12 01:26:46 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 20:28:29 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_strclr(char *s)
 {
 	size_t	i;
 
-	if (! s)
+	if (s == NULL)
 		return ;
 	i = 0;
 	while (s[i])

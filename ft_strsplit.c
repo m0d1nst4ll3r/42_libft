@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 02:48:20 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 03:08:35 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 20:56:05 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,17 @@ static size_t	count_words(const char *s, char c)
 {
 	size_t	i;
 	size_t	count;
-	char	inword;
 
 	i = 0;
-	inword = 0;
+	count = 0;
 	while (s[i])
 	{
-		if (! inword && s[i] != c)
-		{
-			inword = 1;
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i])
 			count++;
-		}
-		else if (inword && s[i] == c)
-			inword = 0;
-		i++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
 	return (count);
 }
@@ -64,7 +61,6 @@ static char	fill_words(char **new, const char *s, char c, size_t count)
 {
 	size_t	word;
 	size_t	i;
-	size_t	wlen;
 
 	i = 0;
 	word = 0;
@@ -72,20 +68,17 @@ static char	fill_words(char **new, const char *s, char c, size_t count)
 	{
 		while (s[i] == c)
 			i++;
-		wlen = get_word_len(s + i, c);
-		new[word] = ft_strnew(wlen + 1);
+		new[word] = ft_strndup(s + i, get_word_len(s + i, c) + 1);
 		if (! new[word])
 		{
-			free_all(new, word + 1);
+			free_all(new, word);
 			return (1);
 		}
-		ft_strncpy(new[word], s + i, wlen);
-		new[word][wlen] = 0;
 		while (s[i] && s[i] != c)
 			i++;
 		word++;
 	}
-	new[word] = 0;
+	new[word] = NULL;
 	return (0);
 }
 
@@ -94,12 +87,12 @@ char	**ft_strsplit(const char *s, char c)
 	size_t	count;
 	char	**new;
 
-	if (! s)
+	if (s == NULL)
 		return (NULL);
 	count = count_words(s, c);
 	new = (char **)malloc((count + 1) * sizeof(*new));
-	if (! new)
-		return (new);
+	if (new == NULL)
+		return (NULL);
 	if (fill_words(new, s, c, count))
 		return (NULL);
 	return (new);

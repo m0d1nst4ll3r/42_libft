@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:29:33 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/12 00:38:43 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 20:43:13 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {
+	size_t	dstlen;
 	size_t	i;
-	size_t	j;
 
-	if (! dest || ! src)
+	if (dest == NULL || src == NULL)
 		return (dest);
+	dstlen = ft_strlen(dest);
 	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (j < n && src[j])
+	while (i < n && src[i])
 	{
-		dest[i + j] = src[j];
-		j++;
+		dest[dstlen + i] = src[i];
+		i++;
 	}
-	dest[i + j] = 0;
+	dest[dstlen + i] = 0;
 	return (dest);
 }

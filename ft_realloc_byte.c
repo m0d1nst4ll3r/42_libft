@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_realloc_byte.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 22:26:08 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 20:30:20 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/13 21:22:34 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/14 02:57:25 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_realloc_byte(const char *old, char c)
 {
-	size_t	i;
+	size_t	len;
+	char	*new;
 
-	if (dest == NULL || src == NULL)
-		return (dest);
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = 0;
-	return (dest);
+	len = 0;
+	if (old != NULL)
+		len = ft_strlen(old);
+	new = ft_strnew(len + 2);
+	if (new == NULL)
+		return (NULL);
+	if (old != NULL)
+		ft_strcpy(new, old);
+	new[len] = c;
+	new[len + 1] = 0;
+	return (new);
 }

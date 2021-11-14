@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 23:03:46 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/11 23:27:02 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 19:50:11 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_atoi(const char *str)
 	int		neg;
 	int		res;
 
-	if (! str)
+	if (str == NULL)
 		return (0);
 	neg = 1;
 	res = 0;

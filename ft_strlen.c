@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:27:20 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/11 18:18:20 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 20:38:18 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
-	if (! str)
+	if (str == NULL)
 		return (0);
 	i = 0;
 	while (str[i])

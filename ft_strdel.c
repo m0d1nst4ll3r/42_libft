@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 01:11:41 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/12 01:14:03 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 20:30:30 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_strdel(char **as)
 {
-	if (! as)
+	if (as == NULL)
 		return ;
 	free(*as);
 	*as = NULL;

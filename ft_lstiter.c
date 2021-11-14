@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_listiter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 22:26:08 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 20:30:20 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/14 13:45:25 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/14 13:48:19 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	size_t	i;
-
-	if (dest == NULL || src == NULL)
-		return (dest);
-	i = 0;
-	while (src[i])
+	if (f == NULL)
+		return ;
+	while (lst)
 	{
-		dest[i] = src[i];
-		i++;
+		(*f)(lst);
+		lst = lst->next;
 	}
-	dest[i] = 0;
-	return (dest);
 }

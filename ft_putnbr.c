@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 22:26:08 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 20:30:20 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/14 03:08:53 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/14 03:12:07 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+static void	putnbr_recursive(long int n)
 {
-	size_t	i;
-
-	if (dest == NULL || src == NULL)
-		return (dest);
-	i = 0;
-	while (src[i])
+	if (n < 0)
 	{
-		dest[i] = src[i];
-		i++;
+		ft_putchar('-');
+		n = -n;
 	}
-	dest[i] = 0;
-	return (dest);
+	if (n > 9)
+		putnbr_recursive(n / 10);
+	ft_putchar(n % 10 + '0');
+}
+
+void	ft_putnbr(int n)
+{
+	putnbr_recursive(n);
 }

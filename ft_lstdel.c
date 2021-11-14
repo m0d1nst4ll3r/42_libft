@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 22:26:08 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 20:30:20 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/14 13:50:25 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/14 13:53:02 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t	i;
+	t_list	*elem;
+	t_list	*next;
 
-	if (dest == NULL || src == NULL)
-		return (dest);
-	i = 0;
-	while (src[i])
+	if (alst == NULL || del == NULL)
+		return ;
+	elem = *alst;
+	while (elem)
 	{
-		dest[i] = src[i];
-		i++;
+		next = elem->next;
+		ft_lstdelone(&elem, del);
+		elem = next;
 	}
-	dest[i] = 0;
-	return (dest);
+	*alst = NULL;
 }

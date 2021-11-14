@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 22:26:08 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 20:30:20 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/14 13:23:24 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/14 13:36:10 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+t_list	*ft_lstnew(const void *content, size_t content_size)
 {
-	size_t	i;
+	t_list	*new;
 
-	if (dest == NULL || src == NULL)
-		return (dest);
-	i = 0;
-	while (src[i])
+	new = (t_list *)malloc(sizeof(*new));
+	if (new == NULL)
+		return (NULL);
+	if (content == NULL)
+		content_size = 0;
+	else
 	{
-		dest[i] = src[i];
-		i++;
+		new->content = ft_memdup(content, content_size);
+		if (new->content == NULL)
+		{
+			free(new);
+			return (NULL);
+		}
 	}
-	dest[i] = 0;
-	return (dest);
+	new->content_size = content_size;
+	new->next = NULL;
+	return (new);
 }

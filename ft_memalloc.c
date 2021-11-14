@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 01:01:22 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/12 01:04:43 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 19:53:27 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memalloc(size_t size)
 
 	new = malloc(size);
 	if (new == NULL)
-		return (new);
+		return (NULL);
 	i = 0;
 	while (i < size)
 	{

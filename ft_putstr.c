@@ -6,16 +6,16 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:25:35 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/11 23:25:48 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/14 03:08:34 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *str)
+void	ft_putstr(const char *str)
 {
-	if (! str)
+	if (str == NULL)
 		return ;
 	while (*str)
-		write(1, str++, 1);
+		ft_putchar(*(str++));
 }

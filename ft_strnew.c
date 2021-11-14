@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 01:08:16 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/12 01:10:55 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 20:44:18 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnew(size_t size)
 
 	new = (char *)malloc((size + 1) * sizeof(*new));
 	if (new == NULL)
-		return (new);
+		return (NULL);
 	i = 0;
 	while (i < size + 1)
 	{

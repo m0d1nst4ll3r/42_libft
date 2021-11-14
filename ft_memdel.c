@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 01:07:20 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/12 01:13:44 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 19:59:41 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_memdel(void **ap)
 {
-	if (! ap)
+	if (ap == NULL)
 		return ;
 	free(*ap);
 	*ap = NULL;

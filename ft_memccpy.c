@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 23:37:55 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/12 00:03:34 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 19:56:52 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	size_t		i;
 
-	if (! dest || ! src)
+	if (dest == NULL || src == NULL)
 		return (NULL);
 	i = 0;
 	while (i < n)

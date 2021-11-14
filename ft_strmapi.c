@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 01:20:01 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 02:14:00 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 20:42:10 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*new;
 
-	if (! s || ! f)
+	if (s == NULL || f == NULL)
 		return (NULL);
 	i = 0;
 	while (s[i])
 		i++;
 	new = (char *)malloc((i + 1) * sizeof(*new));
 	if (new == NULL)
-		return (new);
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{

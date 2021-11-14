@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 01:15:13 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 02:14:18 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 20:34:21 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
-	if (! s || ! f)
+	if (s == NULL || f == NULL)
 		return ;
 	i = 0;
 	while (s[i])

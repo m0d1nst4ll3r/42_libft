@@ -6,13 +6,15 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 01:12:08 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 02:14:28 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 20:33:24 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_striter(char *s, void (*f)(char *))
 {
-	if (! s || ! f)
+	if (s == NULL || f == NULL)
 		return ;
 	while (*s)
 		(*f)(s++);

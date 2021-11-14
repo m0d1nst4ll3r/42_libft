@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 02:24:56 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 02:38:05 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/13 20:35:57 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*new;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	new = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (! new)
 		return (new);
