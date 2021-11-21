@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/14 13:23:24 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/14 13:36:10 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/20 15:57:21 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/20 16:04:25 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(const void *content, size_t content_size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	t_list	*new;
+	long unsigned int	mult;
+	void				*new;
 
-	new = (t_list *)malloc(sizeof(*new));
-	if (new == NULL)
+	mult = nmemb * size;
+	if (mult == 0 || mult > 0xffffffff)
 		return (NULL);
-	if (content == NULL)
-		content_size = 0;
-	else
-	{
-		new->content = ft_memdup(content, content_size);
-		if (new->content == NULL)
-		{
-			free(new);
-			return (NULL);
-		}
-	}
-	new->content_size = content_size;
-	new->next = NULL;
+	new = malloc(mult);
+	ft_bzero(new, mult);
 	return (new);
 }

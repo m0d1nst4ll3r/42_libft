@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:34:18 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/21 14:52:05 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/20 21:00:08 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,30 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *elem));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//	Custom
+void	*ft_memdup(const void *s, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void	ft_putchar(char c);
+void	ft_putstr(const char *s);
+void	ft_putendl(const char *s);
+void	ft_putnbr(int n);
+char	*ft_strcat(char *dest, const char *src);
+char	*ft_strncat(char *dest, const char *src, size_t n);
+char	*ft_strcpy(char *dest, const char *src);
+char	*ft_strncpy(char *dest, const char *src, size_t n);
+char	*ft_strndup(const char *str, size_t n);
+void	ft_strclr(char *s);
+int		ft_strcmp(const char *s1, const char *s2);
+int		ft_strequ(const char *s1, const char *s2);
+int		ft_strnequ(const char *s1, const char *s2, size_t n);
+char	*ft_strstr(const char *haystack, const char *needle);
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_strdel(char **as);
+char	*ft_realloc_byte(const char *old, char c);
+void	ft_striter(char *s, void (*f)(char *));
+char	*ft_strmap(const char *s, char (*f)(char));
 
 #endif

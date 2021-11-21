@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 23:45:08 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/20 15:46:52 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/20 16:27:45 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/20 16:28:34 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	size_t		i;
+	int	i;
 
-	if (dest > src)
+	i = 0;
+	while (lst)
 	{
-		i = n;
-		while (i > 0)
-		{
-			i--;
-			((char *)dest)[i] = ((const char *)src)[i];
-		}
+		i++;
+		lst = lst->next;
 	}
-	else
-	{
-		i = 0;
-		while (i < n)
-		{
-			((char *)dest)[i] = ((const char *)src)[i];
-			i++;
-		}
-	}
-	return (dest);
+	return (i);
 }

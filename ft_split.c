@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 02:48:20 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 20:56:05 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/21 15:07:37 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,14 @@ static void	free_all(char **new, size_t count)
 	free(new);
 }
 
-//	This function could use a strndup, as did a few before
+//	I wish I could have used strndup...
 //	Note that in case of any malloc failure, the function
 //		will free all successful mallocs thus far before exiting
 static char	fill_words(char **new, const char *s, char c, size_t count)
 {
 	size_t	word;
 	size_t	i;
+	size_t	len;
 
 	i = 0;
 	word = 0;
@@ -68,12 +69,15 @@ static char	fill_words(char **new, const char *s, char c, size_t count)
 	{
 		while (s[i] == c)
 			i++;
-		new[word] = ft_strndup(s + i, get_word_len(s + i, c) + 1);
+		len = get_word_len(s + i, c);
+		new[word] = (char *)malloc(len + 1);
 		if (! new[word])
 		{
 			free_all(new, word);
 			return (1);
 		}
+		ft_strlcpy(new[word], s + i, len);
+		new[word][len] = 0;
 		while (s[i] && s[i] != c)
 			i++;
 		word++;
@@ -82,7 +86,7 @@ static char	fill_words(char **new, const char *s, char c, size_t count)
 	return (0);
 }
 
-char	**ft_strsplit(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	size_t	count;
 	char	**new;

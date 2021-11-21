@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/14 13:48:55 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/14 14:04:47 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/14 13:43:48 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/20 20:36:14 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+//	We chose to consider a NULL pointer as an incorrect argument
+//	This is because overwriting a list full of elements by writing
+//		NULL at its beginning is very likely to cause memory leaks
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	t_list	*new;
-
-	if (lst == NULL || f == NULL)
-		return (NULL);
-	new = NULL;
-	while (lst)
-	{
-		ft_lstadd_back(&new, (*f)(lst));
-		lst = lst->next;
-	}
-	return (new);
+	if (alst == NULL || new == NULL)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }

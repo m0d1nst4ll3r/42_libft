@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 19:45:33 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 21:04:02 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/21 15:11:26 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strndup(const char *s, size_t n)
 	new = ft_strnew(n + 1);
 	if (new == NULL)
 		return (NULL);
-	while (i < n)
+	while (s[i] && i < n)
 	{
 		new[i] = s[i];
 		i++;

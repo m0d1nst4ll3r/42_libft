@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/14 13:43:48 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/14 13:45:01 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/14 13:23:24 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/20 20:31:46 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+t_list	*ft_lstnew(void *content)
 {
-	if (alst == NULL || *alst == NULL || new == NULL)
-		return ;
-	new->next = *alst;
-	*alst = new;
+	t_list	*new;
+
+	new = (t_list *)malloc(sizeof(*new));
+	if (new == NULL)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

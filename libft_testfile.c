@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 02:53:43 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/14 23:09:03 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/14 23:12:13 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -371,7 +371,8 @@ static void	test_void_extreme(void)
 	
 	ft_memset(NULL, 10, 10);
 	ft_bzero(NULL, 10);
-	ft_memdup(NULL, 10);
+	if (CUSTOM)
+		ft_memdup(NULL, 10);
 	ft_memcpy(NULL, NULL, 10);
 	ft_memcpy(test, NULL, 10);
 	ft_memcpy(NULL, test, 10);

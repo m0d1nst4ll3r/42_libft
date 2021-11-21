@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 01:32:40 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 21:00:06 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/21 14:25:54 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 //		(barring a bad pointer)
 //	The function will still return NULL in case of bad pointer
 //		or failed malloc
-char	*ft_strsub(const char *s, unsigned int start, size_t len)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*new;
 	size_t	slen;
@@ -39,7 +39,6 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 	new = (char *)malloc((len + 1) * sizeof(*new));
 	if (new == NULL)
 		return (NULL);
-	new = ft_strncpy(new, s + start, len);
-	new[len] = 0;
+	ft_strlcpy(new, s + start, len + 1);
 	return (new);
 }
