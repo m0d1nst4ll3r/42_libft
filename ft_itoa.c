@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 21:33:30 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/21 15:03:43 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/22 15:28:23 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static char	*realloc_byte(const char *old, char c)
 	len = 0;
 	if (old != NULL)
 		len = ft_strlen(old);
-	new = (char *)malloc((len + 2) * sizeof(*new));
+	new = malloc((len + 2) * sizeof(*new));
 	if (new == NULL)
 		return (NULL);
 	if (old != NULL)

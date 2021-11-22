@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 01:16:33 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 20:41:54 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/14 13:23:24 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/22 15:28:58 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
-	char	*new;
+	t_list	*new;
 
-	if (s == NULL || f == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i])
-		i++;
-	new = (char *)malloc((i + 1) * sizeof(*new));
+	new = malloc(sizeof(*new));
 	if (new == NULL)
 		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		new[i] = (*f)(s[i]);
-		i++;
-	}
-	new[i] = 0;
+	new->content = content;
+	new->next = NULL;
 	return (new);
 }

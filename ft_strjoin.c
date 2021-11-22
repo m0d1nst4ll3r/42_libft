@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 02:24:56 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/21 14:57:59 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/22 15:29:53 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	new = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(*new));
+	new = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(*new));
 	if (! new)
 		return (new);
 	st_strcpy(new, s1);

@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 22:52:44 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 20:57:34 by rpohlen          ###   ########.fr       */
+/*   Created: 2021/11/12 01:08:16 by rpohlen           #+#    #+#             */
+/*   Updated: 2021/11/22 18:27:56 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char	*ft_strnew(size_t size)
 {
-	size_t	ndlen;
-	size_t	hslen;
 	size_t	i;
-	size_t	j;
+	char	*new;
 
-	if (haystack == NULL || needle == NULL)
+	new = malloc((size + 1) * sizeof(*new));
+	if (new == NULL)
 		return (NULL);
-	ndlen = ft_strlen(needle);
-	hslen = ft_strlen(haystack);
 	i = 0;
-	while (hslen - i >= ndlen)
+	while (i < size + 1)
 	{
-		j = 0;
-		while (needle[j] && haystack[i] == needle[j])
-			j++;
-		if (! needle[j])
-			return ((char *)haystack + i);
+		new[i] = 0;
 		i++;
 	}
-	return (NULL);
+	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:26:41 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 20:32:55 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/22 15:29:42 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strdup(const char *str)
 		return (NULL);
 	len = ft_strlen(str);
 	i = 0;
-	new = (char *)malloc(sizeof(char) * (len + 1));
+	new = malloc(sizeof(char) * (len + 1));
 	if (new == NULL)
 		return (NULL);
 	while (i < len)

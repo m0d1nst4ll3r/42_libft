@@ -5,15 +5,18 @@ These (with their corresponding header and Makefile) will stay in the custom fol
 
 Todo:
 
-1. Fix Makefile bonus bug
-2. Use the 3 following tests (one or two may be out of date)
-
-	https://github.com/ska42/libft-war-machine
+1. Use the 2 following tests
 
 	https://github.com/alelievr/libft-unit-test
 
 	https://github.com/Tripouille/libftTester
 
-3. Finish writing the main to test everything
+2. Finish writing the main to test everything
 	/!\ The main was started using the old pdf, some functions have been removed and others added
-4. Do a last double check on file names in headers, static funcs, etc...
+3. Do a last double check on file names in headers, static funcs, etc...
+
+Note:
+
+Makefile 'bonus' rule is bugged and relinks every time.
+I haven't found a way to do it right. Makefiles are weird.
+I give up.

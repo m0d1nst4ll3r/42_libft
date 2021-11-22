@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 01:32:40 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/21 14:25:54 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/22 15:34:14 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		len = 0;
 	else if (start + len > slen)
 		len = slen - start;
-	new = (char *)malloc((len + 1) * sizeof(*new));
+	new = malloc((len + 1) * sizeof(*new));
 	if (new == NULL)
 		return (NULL);
 	ft_strlcpy(new, s + start, len + 1);

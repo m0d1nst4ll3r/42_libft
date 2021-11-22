@@ -10,12 +10,20 @@ PART2	= ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 		  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		  ft_itoa.c
 
-PARTB	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c \
-		  ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+PARTB	= ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
+		  ft_lstsize.c ft_lstlast.c ft_lstiter.c ft_lstmap.c
+
+CUSTOM	= ft_memalloc_bonus.c ft_memccpy_bonus.c ft_memdel_bonus.c ft_memdup_bonus.c \
+		  ft_strnew_bonus.c ft_strdel_bonus.c ft_strndup_bonus.c \
+		  ft_putchar_bonus.c ft_putstr_bonus.c ft_putendl_bonus.c ft_putnbr_bonus.c \
+		  ft_strcat_bonus.c ft_strncat_bonus.c ft_strcpy_bonus.c ft_strncpy_bonus.c \
+		  ft_strclr_bonus.c ft_strcmp_bonus.c ft_strequ_bonus.c ft_strnequ_bonus.c ft_strstr_bonus.c \
+		  ft_striter_bonus.c ft_strmap_bonus.c \
+		  ft_realloc_byte_bonus.c
 
 OBJS	= ${PART1:.c=.o} ${PART2:.c=.o}
 
-OBJSB	= ${PARTB:.c=.o}
+OBJSB	= ${PARTB:.c=.o} ${CUSTOM:.c=.o}
 
 NAME	= libft.a
 

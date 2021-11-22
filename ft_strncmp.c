@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 23:02:30 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 20:43:34 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/22 15:30:45 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	while (i < n - 1 && s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
-	return (s1[i] - s2[i]);
+	return ((const unsigned char)s1[i] - (const unsigned char)s2[i]);
 }
