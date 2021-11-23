@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:50:18 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/21 16:10:18 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/23 16:44:50 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	if (str == NULL)
-		return (NULL);
 	while (*str)
 		if (*(str++) == c)
 			return ((char *)str - 1);

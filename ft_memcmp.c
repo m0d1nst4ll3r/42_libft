@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 00:14:20 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/21 15:40:44 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/23 13:57:45 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	const unsigned char	*ar1;
 	const unsigned char	*ar2;
 
-	if (s1 == NULL || s2 == NULL || n == 0)
+	if ((s1 == NULL && s2 == NULL) || n == 0)
 		return (0);
 	i = 0;
 	ar1 = (const unsigned char *)s1;
 	ar2 = (const unsigned char *)s2;
-	while (i < n - 1 && ar1[i] && ar2[i] && ar1[i] == ar2[i])
+	while (i < n - 1 && ar1[i] == ar2[i])
 		i++;
 	return (ar1[i] - ar2[i]);
 }

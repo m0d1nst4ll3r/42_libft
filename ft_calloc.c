@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 15:57:21 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/20 16:04:25 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/23 17:09:57 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (mult == 0 || mult > 0xffffffff)
 		return (NULL);
 	new = malloc(mult);
+	if (! new)
+		return (NULL);
 	ft_bzero(new, mult);
 	return (new);
 }

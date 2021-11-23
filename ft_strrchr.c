@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:50:50 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/21 16:12:25 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/23 13:53:24 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char	*ft_strrchr(const char *str, int c)
 {
 	size_t	i;
 
-	if (str == NULL)
-		return (NULL);
 	i = ft_strlen(str) + 1;
 	while (i > 0)
 	{

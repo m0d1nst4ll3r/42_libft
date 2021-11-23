@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:52:44 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/22 18:28:25 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/23 17:14:54 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	size_t	i;
 	size_t	j;
 
-	if (haystack == NULL || needle == NULL)
+	if (haystack == NULL && needle == NULL)
 		return (NULL);
+	if (! *haystack && ! *needle)
+		return ((char *)haystack);
 	ndlen = ft_strlen(needle);
 	hslen = ft_strlen(haystack);
 	i = 0;

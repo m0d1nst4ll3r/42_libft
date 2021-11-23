@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 23:45:08 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/20 15:46:52 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/23 14:06:45 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t		i;
 
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	if (dest > src)
 	{
 		i = n;

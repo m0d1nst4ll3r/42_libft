@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strncat_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:29:33 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/13 20:43:13 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/23 17:13:54 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strncat(char *dest, const char *src, size_t n)
 	size_t	dstlen;
 	size_t	i;
 
-	if (dest == NULL || src == NULL)
+	if (dest == NULL && src == NULL)
 		return (dest);
 	dstlen = ft_strlen(dest);
 	i = 0;
