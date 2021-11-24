@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:34:18 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/22 18:14:27 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/24 16:04:44 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
-char	*ft_realloc_byte(const char *old, char c);
 void	ft_striter(char *s, void (*f)(char *));
 char	*ft_strmap(const char *s, char (*f)(char));
+char	*ft_realloc_byte(const char *old, char c);
 
 #endif
