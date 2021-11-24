@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:34:18 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/24 16:04:44 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/24 19:01:59 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
 
 typedef struct s_list
 {
@@ -95,6 +94,6 @@ char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
 void	ft_striter(char *s, void (*f)(char *));
 char	*ft_strmap(const char *s, char (*f)(char));
-char	*ft_realloc_byte(const char *old, char c);
+char	*ft_realloc_byte(char *old, char c);
 
 #endif

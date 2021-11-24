@@ -35,9 +35,10 @@ CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I.
-so:
-		$(CC) -nostartfiles -fPIC $(CFLAGS) $(PART1) $(PART2) $(PARTB) $(CUSTOM)
-		gcc -nostartfiles -shared -o libft.so $(PART1) $(PART2) $(PARTB) $(CUSTOM)
+
+#so:
+#		$(CC) -nostartfiles -fPIC $(CFLAGS) $(PART1) $(PART2) $(PARTB) $(CUSTOM)
+#		gcc -nostartfiles -shared -o libft.so $(PART1) $(PART2) $(PARTB) $(CUSTOM)
 
 ${NAME}:	${OBJS}
 			${LIB} ${NAME} ${OBJS}

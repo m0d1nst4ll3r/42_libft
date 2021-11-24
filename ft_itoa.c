@@ -6,47 +6,51 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 21:33:30 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/24 15:46:21 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/24 20:21:15 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*realloc_byte(const char *old, char c)
-{
-	size_t	len;
-	char	*new;
-
-	len = 0;
-	if (old != NULL)
-		len = ft_strlen(old);
-	new = malloc((len + 2) * sizeof(*new));
-	if (new == NULL)
-		return (NULL);
-	if (old != NULL)
-		ft_strlcpy(new, old, len + 1);
-	new[len] = c;
-	new[len + 1] = 0;
-	return (new);
-}
-
-static void	itoa_recursive(char **new, long int n)
+static void	itoa_recursive(char *new, long int n, size_t i)
 {
 	if (n < 0)
 	{
-		*new = realloc_byte(*new, '-');
+		new[0] = '-';
 		n = -n;
 	}
 	if (n > 9)
-		itoa_recursive(new, n / 10);
-	*new = realloc_byte(*new, n % 10 + '0');
+		itoa_recursive(new, n / 10, i - 1);
+	new[i] = n % 10 + '0';
+}
+
+static size_t	get_num_chars(int n)
+{
+	size_t	num;
+
+	if (n == 0)
+		return (1);
+	num = 0;
+	if (n < 0)
+		num++;
+	while (n)
+	{
+		num++;
+		n /= 10;
+	}
+	return (num);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*new;
+	size_t	len;
 
-	new = NULL;
-	itoa_recursive(&new, n);
+	len = get_num_chars(n);
+	new = malloc((len + 1) * sizeof(*new));
+	if (!new)
+		return (NULL);
+	new[len] = 0;
+	itoa_recursive(new, n, len - 1);
 	return (new);
 }

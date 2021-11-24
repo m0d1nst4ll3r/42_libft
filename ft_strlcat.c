@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:35:01 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/24 15:49:58 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/24 19:37:01 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strlcat(char *dest, const char *src, size_t n)
 	dstlen = 0;
 	while (dstlen < n && dest[dstlen])
 		dstlen++;
-	if (dest[dstlen] || dstlen >= n - 1)
+	if (dstlen + 2 > n)
 		return (dstlen + srclen);
 	i = 0;
 	while (dstlen + i < n - 1 && src[i])

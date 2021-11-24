@@ -28,7 +28,7 @@ Note2:
 When trying to reproduce existing functions, NULL pointers should not be protected if you want to reproduce them exactly.
 As such, I opted to remove them, but keep them for my own functions.
 
-war-machine tests are pretty basic and they all succeed easily
-unit-test tests are very advanced and test a lot, including the NULL pointers protection
+- war-machine is ALL OK
+- unit-test is ALL OK 
 
 But unit-test tests are made for mac instead of linux

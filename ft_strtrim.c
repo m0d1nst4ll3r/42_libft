@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 02:41:33 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/22 15:35:03 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/24 18:50:42 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 static char	*st_strndup(const char *s, size_t n)
 {
 	size_t	i;
+	size_t	len;
 	char	*new;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
+	len = ft_strlen(s);
+	if (len < n)
+		n = len;
 	new = malloc((n + 1) * sizeof(*new));
 	if (new == NULL)
 		return (NULL);
-	while (s[i] && i < n)
+	while (i < n)
 	{
 		new[i] = s[i];
 		i++;
