@@ -5,7 +5,9 @@ These (with their corresponding header and Makefile) will stay in the custom fol
 
 Todo:
 
-1. Use the 2 following tests
+1. Use the 3 following tests to fix everything
+
+	https://github.com/ska42/libft-war-machine
 
 	https://github.com/alelievr/libft-unit-test
 
@@ -20,3 +22,13 @@ Note:
 Makefile 'bonus' rule is bugged and relinks every time.
 I haven't found a way to do it right. Makefiles are weird.
 I give up.
+
+Note2:
+
+When trying to reproduce existing functions, NULL pointers should not be protected if you want to reproduce them exactly.
+As such, I opted to remove them, but keep them for my own functions.
+
+war-machine tests are pretty basic and they all succeed easily
+unit-test tests are very advanced and test a lot, including the NULL pointers protection
+
+But unit-test tests are made for mac instead of linux
