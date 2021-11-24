@@ -1,34 +1,21 @@
 # 42_libft
 
-The project will be turned in without any custom bonus function.
-These (with their corresponding header and Makefile) will stay in the custom folder of this project, to be used later in the real libft.
+I decided not to do a test main. I'll just use the 3 tests below.
 
-Todo:
+After turning in, if there are no errors, I'll have to modify this so that:
+- There is no bonus rule, the makefile compiles everything at once
+- All functions are protected against NULL pointers (it's just better)
 
-1. Use the 3 following tests to fix everything
+Notes:
 
-	https://github.com/ska42/libft-war-machine
-
-	https://github.com/alelievr/libft-unit-test
-
-	https://github.com/Tripouille/libftTester
-
-2. Finish writing the main to test everything
-	/!\ The main was started using the old pdf, some functions have been removed and others added
-3. Do a last double check on file names in headers, static funcs, etc...
-
-Note:
-
-Makefile 'bonus' rule is bugged and relinks every time.
-I haven't found a way to do it right. Makefiles are weird.
-I give up.
-
-Note2:
-
-When trying to reproduce existing functions, NULL pointers should not be protected if you want to reproduce them exactly.
-As such, I opted to remove them, but keep them for my own functions.
-
+- Makefile 'bonus' rule is bugged and relinks every time. I haven't found a way to do it right. Makefiles are weird. I give up.
+- When trying to reproduce existing functions, NULL pointers should not be protected if you want to reproduce them exactly. As such, I opted to remove them when reproducing official functions, but keep them for the custom functions.
 - war-machine is ALL OK
-- unit-test is ALL OK 
+- unit-test is ALL OK - except isalnum, tolower, toupper, calloc, and lstmap
+- libftTester is ALL OK
 
-But unit-test tests are made for mac instead of linux
+The 3 tests I used:
+
+- https://github.com/ska42/libft-war-machine
+- https://github.com/alelievr/libft-unit-test
+- https://github.com/Tripouille/libftTester
