@@ -7,6 +7,7 @@ After turning in and getting 100%, I'll have to modify this so that:
 - Files have coherent names (like strsub instead of substr) and no \_bonus
 - All functions are protected against NULL pointers (it's just better)
 - Eventually, not really needed but changing my non-bonus functions so that they use bonus functions when relevant (I can't right now because of how the normal and bonus sections are compiled and graded separately)
+- Re-ordering files in the Makefile and libft.h not according to which part of the project it belongs to but rather a certain logic like (1) official functions (2) custom functions (3) list functions etc...
 
 Notes:
 
@@ -26,5 +27,5 @@ https://github.com/Tripouille/libftTester
   - isalnum is impossible to fix, the test is just broken on linux
   - tolower and tolower can be fixed with a single if (n >= 128 && n <= -2) return (unsigned char)n; but adding this in the function just doesn't make sense
   - calloc can be fixed by returning something malloced, such as if (mult == 0) return (malloc(1)); but adding this just doesn't make sense either
-  - lstmap can be fixed by removing the protection on (\*del) (the del ==NULL) but removing it doesn't make sense
+  - lstmap can be fixed by removing the protection on (\*del) (the del == NULL) but removing it doesn't make sense
 - libftTester is ALL OK
