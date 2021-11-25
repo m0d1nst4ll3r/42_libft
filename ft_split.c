@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 02:48:20 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/24 15:49:52 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/25 13:41:14 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,12 @@ static char	fill_words(char **new, const char *s, char c, size_t count)
 		while (s[i] == c)
 			i++;
 		len = get_word_len(s + i, c);
-		new[word] = malloc(len + 1);
+		new[word] = ft_substr(s, i, len);
 		if (! new[word])
 		{
 			free_all(new, word);
 			return (1);
 		}
-		ft_strlcpy(new[word], s + i, len + 1);
-		new[word][len] = 0;
 		while (s[i] && s[i] != c)
 			i++;
 		word++;
