@@ -6,7 +6,7 @@
 /*   By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 02:48:20 by rpohlen           #+#    #+#             */
-/*   Updated: 2021/11/25 13:41:14 by rpohlen          ###   ########.fr       */
+/*   Updated: 2021/11/25 15:18:59 by rpohlen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static size_t	get_word_len(const char *s, char c)
 	return (i);
 }
 
-static void	free_all(char **new, size_t count)
+static char	**free_all(char **new, size_t count)
 {
 	size_t	i;
 
@@ -52,12 +52,12 @@ static void	free_all(char **new, size_t count)
 		i++;
 	}
 	free(new);
+	return (NULL);
 }
 
-//	I wish I could have used strndup...
 //	Note that in case of any malloc failure, the function
 //		will free all successful mallocs thus far before exiting
-static char	fill_words(char **new, const char *s, char c, size_t count)
+static char	**fill_words(char **new, const char *s, char c, size_t count)
 {
 	size_t	word;
 	size_t	i;
@@ -72,16 +72,13 @@ static char	fill_words(char **new, const char *s, char c, size_t count)
 		len = get_word_len(s + i, c);
 		new[word] = ft_substr(s, i, len);
 		if (! new[word])
-		{
-			free_all(new, word);
-			return (1);
-		}
+			return (free_all(new, word));
 		while (s[i] && s[i] != c)
 			i++;
 		word++;
 	}
 	new[word] = NULL;
-	return (0);
+	return (new);
 }
 
 char	**ft_split(const char *s, char c)
@@ -95,7 +92,5 @@ char	**ft_split(const char *s, char c)
 	new = malloc((count + 1) * sizeof(*new));
 	if (new == NULL)
 		return (NULL);
-	if (fill_words(new, s, c, count))
-		return (NULL);
-	return (new);
+	return (fill_words(new, s, c, count));
 }
