@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rpohlen <rpohlen@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/25 17:00:48 by rpohlen           #+#    #+#              #
+#    Updated: 2021/11/25 17:01:08 by rpohlen          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 PART1		= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isprint.c ft_isascii.c \
 			  ft_strlen.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strnstr.c \
 			  ft_strlcpy.c ft_strlcat.c ft_strdup.c \
@@ -28,7 +40,7 @@ OBJSB		= ${PARTB:.c=.o} ${CUSTOM:.c=.o}
 NAME		= libft.a
 
 CC			= gcc
-LIB			= ar rc
+LIB			= ar rcs
 RM			= rm -f
 
 CFLAGS		= -Wall -Wextra -Werror
@@ -40,8 +52,6 @@ all:		${NAME}
 
 bonus:		${NAME} ${OBJSB}
 			${LIB} $(NAME) $?
-
-bonus:		${NAMEB}
 
 clean:
 			${RM} ${OBJS} ${OBJSB}
